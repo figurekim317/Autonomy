@@ -1,0 +1,35 @@
+curb_detection:
+  ros__parameters:
+    ## clustering_curb_r
+    clustering_curb_r/cluster_radius: 0.5
+    clustering_curb_r/min_cluster_size: 10
+    clustering_curb_r/point_topic_to_publish: depth_fr/line_msg
+    clustering_curb_r/point_topic_to_subcribe: depth_fr/ground
+    clustering_curb_r/frame_id_name: depth_fr
+    clustering_curb_r/enable_left: False
+
+    ## clustering_curb_l
+    clustering_curb_l/cluster_radius: 0.5
+    clustering_curb_l/min_cluster_size: 10
+    clustering_curb_l/point_topic_to_publish: depth_fl/line_msg
+    clustering_curb_l/point_topic_to_subcribe: depth_fl/ground
+    clustering_curb_l/frame_id_name: depth_fl
+    clustering_curb_l/enable_left: True
+
+    ## combine_ground
+    combine_ground/enable_fusion: False
+    combine_ground/limit_height: 0.0
+    combine_ground/point_topic_to_publish: combine_line_msg
+    combine_ground/left_point_topic_to_subcribe: depth_fl/line_msg
+    combine_ground/right_point_topic_to_subcribe: depth_fr/line_msg
+
+    ## clustering_point_for_curb
+    clustering_point/cluster_radius: 0.5
+    clustering_point/min_cluster_size: 10
+    clustering_point/point_topic_to_publish: seg_line_msg
+    clustering_point/custom_topic_to_publish: seg_line_point
+    clustering_point/point_topic_to_subcribe: combine_line_msg
+
+    frame_id_name: base_link
+
+

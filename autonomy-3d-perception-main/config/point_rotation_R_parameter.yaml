@@ -1,0 +1,8 @@
+depth_fr:
+  point_rotation:
+    ros__parameters:
+      point_topic_to_publish: /depth_fr/cloudPCL
+      point_topic_to_subcribe: /depth_fr/cloudXYZ
+      frame_id_name: depth_fr
+      enable_left: False
+

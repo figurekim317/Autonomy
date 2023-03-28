@@ -1,0 +1,19 @@
+segmentation_fusion:
+  ros__parameters:
+    # compare_point
+    compare_point/neu_grid_topic_to_publish: road_neu_grid
+    compare_point/ground_topic_to_subscribe: ground_grid
+    compare_point/segmentation_topic_to_subscribe: cam_f_semantic_segmentation
+
+    # erosion_dilation
+    erosion_dilation/neu_grid_topic_to_publish: ground_grid
+    erosion_dilation/point_topic_to_subcribe: combine_ground_msg
+
+    # frame_id
+    frame_id_name: base_link
+    
+    # visualize
+    visualize: True
+    compare_point/erosion_point_topic_to_publish: erosion_ground_msg
+    compare_point/nav_grid_topic_to_publish: nav_grid
+

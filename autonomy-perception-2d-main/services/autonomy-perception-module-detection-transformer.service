@@ -1,0 +1,17 @@
+[Unit]
+RequiresMountsFor=/home
+After=network.target multi-user.target
+Description=detection_transformer
+
+[Service]
+type=notify
+User=linkxavier
+Environment="RMW_IMPLEMENTATION=rmw_cyclonedds_cpp"
+Environment="CYCLONEDDS_URI=file:///home/linkxavier/robot_cfg/cyclonedds/cyclonedds.xml"
+ExecStart=/home/linkxavier/scripts/autonomy-perception-module-detection-transformer.sh
+Restart=on-failure
+RestartSec=0
+NotifyAccess=main
+
+[Install]
+WantedBy=multi-user.target

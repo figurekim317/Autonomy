@@ -1,0 +1,37 @@
+%YAML:1.0
+
+depth0_quaternion: !!opencv-matrix
+  rows: 1
+  cols: 4
+  dt: d
+  data: [-0.07014264,  0.31609543, -0.02666119,  0.94415383]
+
+depth1_quaternion: !!opencv-matrix
+  rows: 1
+  cols: 4
+  dt: d
+  data: [ 0.08015828,  0.31756897, -0.02825312,  0.94498655]
+
+depth0_translation: !!opencv-matrix
+   rows: 1
+   cols: 3
+   dt: d
+   data: [-0.00814547,  0.08362813, -0.07582405]
+
+depth1_translation: !!opencv-matrix
+   rows: 1
+   cols: 3
+   dt: d
+   data: [-0.13835045, -0.08333833,  0.02878712]
+
+base_link_xyz: !!opencv-matrix
+   rows: 1
+   cols: 3
+   dt: d
+   data: [0.23,  0.0, 0.41]
+
+robot_link_xyz: !!opencv-matrix
+   rows: 1
+   cols: 3
+   dt: d
+   data: [0.351,  0.27, 0.0]

@@ -1,0 +1,25 @@
+obstacles_detection:
+  ros__parameters:
+    ## combine_object
+    combine_object/left_point_topic_to_subcribe: depth_fl/obstacles
+    combine_object/right_point_topic_to_subcribe: depth_fr/obstacles
+    combine_object/point_topic_to_publish: combine_msg
+    combine_object/left_alive_topic_to_publish: left_depth_alive
+    combine_object/right_alive_topic_to_publish: right_depth_alive
+
+    ## clustering_point
+    clustering_point/cluster_radius: 0.2
+    clustering_point/min_cluster_size: 5
+    clustering_point/point_topic_to_publish: seg_msg
+    clustering_point/custom_topic_to_publish: seg_point
+    clustering_point/point_topic_to_subcribe: combine_msg
+
+    ## post_filtering
+    post_filtering/point_result_topic_to_publish: obstacles_msg
+    post_filtering/custom_result_topic_to_publish: obstacles_point
+    post_filtering/obstacles_topic_to_subcribe: seg_point
+    post_filtering/curb_topic_to_subcribe: seg_line_point
+
+    frame_id_name: base_link
+
+

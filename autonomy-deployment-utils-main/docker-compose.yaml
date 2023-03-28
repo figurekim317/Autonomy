@@ -1,0 +1,98 @@
+version: "3"
+services:
+  node-exporter:
+    image: prom/node-exporter:v1.5.0
+    container_name: node-exporter
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)(12021|/)'
+    expose:
+      - 9100
+    networks:
+      - monitoring
+
+  jetson-exporter:
+    image: public.ecr.aws/j3q0t0m7/neubility/mlops/jetson-exporter:4.0.0
+    container_name: jetson-exporter
+    restart: unless-stopped
+    volumes:
+      - /run/jtop.sock:/run/jtop.sock
+    command:
+      - python
+      - /jetson_stats_prometheus_collector.py
+    expose:
+      - 8000
+    networks:
+      - monitoring
+
+
+  prometheus:
+    image: prom/prometheus:v2.40.7
+    container_name: prometheus
+    restart: unless-stopped
+    volumes:
+      - prometheus:/prometheus
+      - /etc/monitoring/prometheus.yaml:/etc/prometheus/prometheus.yaml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yaml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    expose:
+      - 9090
+    ports:
+      - 9090:9090
+    networks:
+      - monitoring
+
+  process-expoerter:
+    image: ncabatoff/process-exporter
+    container_name: process-exporter
+    restart: unless-stopped
+    privileged: true
+    volumes:
+      - /proc:/host/proc:ro
+      - /etc/monitoring/filename.yaml:/config/filename.yaml
+    command:
+      - '-procfs=/host/proc'
+      - '-config.path=/config/filename.yaml'
+    expose:
+      - 9256
+    networks:
+      - monitoring
+
+  influxdb:
+    image: influxdb:2.6.1
+    container_name: influxdb
+    restart: unless-stopped
+    volumes:
+      - influxdb2:/var/lib/influxdb2
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: admin
+      DOCKER_INFLUXDB_INIT_PASSWORD: adminadmin
+      DOCKER_INFLUXDB_INIT_ORG: autonomy
+      DOCKER_INFLUXDB_INIT_BUCKET: blackbox
+      DOCKER_INFLUXDB_INIT_RETENTION: 2w
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: ZyfvXFIoiNwfi2r4AdAz5Giw/y4=
+    expose:
+      - 8086
+    ports:
+      - 8086:8086
+    networks:
+      - monitoring
+
+volumes:
+  prometheus:
+  influxdb2:
+
+networks:
+  monitoring:

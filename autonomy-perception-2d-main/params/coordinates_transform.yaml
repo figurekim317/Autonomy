@@ -1,0 +1,38 @@
+detection_transformer:
+  ros__parameters:
+    except_class:
+      - unkown
+    ground_class:
+      - bicycle 
+      - car
+      - motorcycle
+      - person
+      - scooter
+      - dog
+      - bollard
+      - cart
+      - neubie
+    # prior height
+    bicycle_prior_height: 0.
+    car_prior_height: 2.0
+    motorcycle_prior_height: 0.
+    person_prior_height: 1.7
+    scooter_prior_height: 0.
+    dog_prior_height: 0.
+    bollard_prior_height: 0.
+    traffic-light-red_prior_height: 0.73
+    traffic-light-green_prior_height: 0.73
+    cart_prior_height: 1.8
+    neubie_prior_height: 0.
+    max_distance_threshold: 30. # [m]
+    under_principle_point_distance_thr: 1.5 # [m]
+    cam_names:
+      - f
+      - br
+      - bl
+    cam_res_height: 1944 # [pixel]
+    cam_res_width: 2592 # [pixel]
+    last_check_z_value: 5. # [m]
+    check_z_linspace_value: 0.5 #[m]
+    is_debug: false
+    mode: 0 # 0: basic 3d transfomration, 1: prior height, 2: prior z + prior height

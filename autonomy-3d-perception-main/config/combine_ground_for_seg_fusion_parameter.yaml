@@ -1,0 +1,9 @@
+combine_ground:
+  ros__parameters:
+    combine_ground/enable_fusion: True
+    combine_ground/limit_height: 10.0
+    combine_ground/point_topic_to_publish: combine_ground_msg
+    combine_ground/left_point_topic_to_subcribe: depth_fl/ground
+    combine_ground/right_point_topic_to_subcribe: depth_fr/ground
+    frame_id_name: base_link
+

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>3d_perception</name>
+  <version>0.0.0</version>
+  <description>The 3d_perception package</description>
+
+  <maintainer email="jwko-nuebility@todo.todo">jwko-nuebility</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>autonomy_ros2_message</depend>
+  <depend>parameter_manager</depend>
+  <depend>common_api</depend>
+  <depend>pcl_ros</depend>
+  <build_depend>builtin_interfaces</build_depend>
+  <exec_depend>builtin_interfaces</exec_depend>
+  <build_depend>libpcl-all-dev</build_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

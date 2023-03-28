@@ -1,0 +1,25 @@
+process_names:
+  - comm:
+    - perception_2d
+    - control_bridge
+    - data_recorder
+    - tracking
+    - obstacles_detection
+    - curb_detection
+    - combine_ground
+    - segmentation_fusion
+    - nb_platform_pkg
+    - system_checker_exe
+    - e2box_exe
+    - ublox_f9p_exe
+    - ntrip_exe
+    - detection_transformer
+    - command_receive
+    - sfn_logger_exe
+    - ekf_exe
+    - stm_exe
+    - robot_client_node
+    - rtp_stream
+    - command_receiver
+    - agnss_node
+    - prometheus

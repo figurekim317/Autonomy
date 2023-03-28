@@ -1,0 +1,72 @@
+%YAML:1.0
+
+# Translation & Rotation Matrix For Robot Baselink Ground(Z=0) to Camera optical center
+cam0_robot_to_cam_Rotation: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [0.0000000,  -1.0000000,  0.0000000,
+          0.0000000,  0.0000000,  -1.0000000,
+          1.0000000,  0.0000000,  0.0000000]
+
+cam0_robot_to_cam_Translation: !!opencv-matrix
+   rows: 3
+   cols: 1
+   dt: d
+   data: [0.254, 0., 0.561]
+
+cam1_robot_to_cam_Rotation: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [0.0000000,  0.0000000,  0.0000000,
+          0.0000000,  0.0000000,  0.0000000,
+          0.0000000,  0.0000000,  0.0000000]
+
+cam1_robot_to_cam_Translation: !!opencv-matrix
+   rows: 3
+   cols: 1
+   dt: d
+   data: [0., 0., 0.]
+
+cam2_robot_to_cam_Rotation: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [0.0000000,  0.0000000,  0.0000000,
+          0.0000000,  0.0000000,  0.0000000,
+          0.0000000,  0.0000000,  0.0000000]
+
+cam2_robot_to_cam_Translation: !!opencv-matrix
+   rows: 3
+   cols: 1
+   dt: d
+   data: [0., 0., 0.]
+
+cam3_robot_to_cam_Rotation: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [0.0000000,  0.0000000,  0.0000000,
+          0.0000000,  0.0000000,  0.0000000,
+          0.0000000,  0.0000000,  0.0000000]
+
+cam3_robot_to_cam_Translation: !!opencv-matrix
+   rows: 3
+   cols: 1
+   dt: d
+   data: [0., 0., 0.]
+
+cam4_robot_to_cam_Rotation: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [0.0000000,  0.0000000,  0.0000000,
+          0.0000000,  0.0000000,  0.0000000,
+          0.0000000,  0.0000000,  0.0000000]
+
+cam4_robot_to_cam_Translation: !!opencv-matrix
+   rows: 3
+   cols: 1
+   dt: d
+   data: [0., 0., 0.]

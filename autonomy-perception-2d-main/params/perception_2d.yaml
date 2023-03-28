@@ -1,0 +1,9 @@
+perception_2d:
+  ros__parameters:
+    tracker_config_file_name: "object_tracker_config.txt"
+    cam_list: ["cam_f"]
+    use_shared_memory: false
+    det_config_file_name: "golf_cls3.txt"
+    seg_config_file_name: "golf_cls4.txt"
+    det_cam_list: ["cam_f", "cam_bl", "cam_br"]
+    seg_cam_list: ["cam_f"]
