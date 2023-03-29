@@ -1,0 +1,16 @@
+detection_transformer:
+  ros__parameters:
+    except_class:
+      - bicycle 
+      - car
+      - motorcycle
+      - scooter
+      - dog
+      - bollard
+      - red
+      - green
+    distance_threshold: 30.
+    cam_names:
+      - f
+      - br
+      - bl

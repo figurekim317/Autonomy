@@ -1,0 +1,17 @@
+[Unit]
+RequiresMountsFor=/home
+After=network.target multi-user.target
+Description=2d_object_detection_service
+
+[Service]
+type=notify
+User=linkxavier
+Environment="RMW_IMPLEMENTATION=rmw_cyclonedds_cpp"
+Environment="CYCLONEDDS_URI=file:///home/linkxavier/robot_cfg/cyclonedds/cyclonedds.xml"
+ExecStart=/home/linkxavier/scripts/autonomy-2d-object-detection.sh
+Restart=on-failure
+WatchdogSec=0
+NotifyAccess=main
+
+[Install]
+WantedBy=multi-user.target

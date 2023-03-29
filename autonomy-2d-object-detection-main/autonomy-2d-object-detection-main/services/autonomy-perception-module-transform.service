@@ -1,0 +1,17 @@
+[Unit]
+RequiresMountsFor=/home
+After=network.target multi-user.target
+Description=transform_2d_to_3d_service
+
+[Service]
+type=notify
+User=linkxavier
+Environment="RMW_IMPLEMENTATION=rmw_cyclonedds_cpp"
+Environment="CYCLONEDDS_URI=file:///home/linkxavier/robot_cfg/cyclonedds/cyclonedds.xml"
+ExecStart=/home/linkxavier/scripts/autonomy-perception-module-transform.sh
+Restart=on-failure
+RestartSec=0
+NotifyAccess=main
+
+[Install]
+WantedBy=multi-user.target

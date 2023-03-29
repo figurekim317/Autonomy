@@ -1,0 +1,12 @@
+object_detection:
+  ros__parameters:
+    model_config_file_name: "yolov5_multicam_infer_cls10_batch1.txt"
+    #model_config_file_name: "yolov5_multicam_infer_cls11.txt"
+    tracker_config_file_name: "object_tracker_config.txt"
+    crop_size: [0, 0, 2592, 1944] # top-left x, top-left y, width, height
+    input_width: 2592
+    input_height: 1944
+    video_width: 2592
+    video_height: 1944
+    cam_list: ["cam_bl", "cam_br"]
+    use_shared_memory: false
