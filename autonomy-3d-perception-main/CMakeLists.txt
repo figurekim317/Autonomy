@@ -13,7 +13,20 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(rclpy REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(visualization_msgs REQUIRED)
+find_package(pcl_conversions REQUIRED)
+find_package(perception_pcl REQUIRED)
+find_package(builtin_interfaces REQUIRED)
+find_package(autonomy_ros2_message REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(parameter_manager REQUIRED)
+find_package(common_api REQUIRED)
+find_package(OpenCV REQUIRED)
 
 
 find_package(PCL REQUIRED)
