@@ -4,7 +4,7 @@
 #include <builtin_interfaces/msg/time.hpp>
 #include "rclcpp/rclcpp.hpp"
 #include "autonomy_ros2_message/msg/neu_bbox.hpp"
-
+#include "autonomy_ros2_message/msg/neu_bbox_point.hpp"
 #include "autonomy_ros2_message/msg/neu_bbox_size.hpp"
 #include "autonomy_ros2_message/msg/neu_class.hpp"
 #include "autonomy_ros2_message/msg/neu_detection.hpp"
