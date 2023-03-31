@@ -1,7 +1,6 @@
 #ifndef __NEU_DETECTION_H__
 #define __NEU_DETECTION_H__
 
-#include <builtin_interfaces/msg/time.hpp>
 #include "rclcpp/rclcpp.hpp"
 #include "autonomy_ros2_message/msg/neu_bbox.hpp"
 #include "autonomy_ros2_message/msg/neu_bbox_point.hpp"
