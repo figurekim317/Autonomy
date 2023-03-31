@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.5)
-project(3d_perception)
 
 if(NOT CMAKE_C_STANDARD)
   set(CMAKE_C_STANDARD 99)
