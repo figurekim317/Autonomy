@@ -1,5 +1,4 @@
-#ifndef __NEU_DETECTION_H__
-#define __NEU_DETECTION_H__
+
 
 #include "rclcpp/rclcpp.hpp"
 #include <builtin_interfaces/msg/time.hpp>
