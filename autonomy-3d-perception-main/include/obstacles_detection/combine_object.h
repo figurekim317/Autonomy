@@ -19,11 +19,6 @@ public:
 
 private:
     void get_ros_parameter();
-    void set_left_point_subscriber(rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr &subscriber);
-    void set_right_point_subscriber(rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr &subscriber);
-    void set_point_publisher(rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr &publisher);
-    void set_left_alive_publisher(rclcpp::Publisher<autonomy_ros2_message::msg::DepthAlive>::SharedPtr &publisher);
-    void set_right_alive_publisher(rclcpp::Publisher<autonomy_ros2_message::msg::DepthAlive>::SharedPtr &publisher);
 
 
     void calculate_euler_angle();
