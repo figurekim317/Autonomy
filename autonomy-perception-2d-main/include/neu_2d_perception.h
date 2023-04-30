@@ -1,5 +1,3 @@
-
-
 #ifndef __NEU_2D_PERCEPTION_H__
 #define __NEU_2D_PERCEPTION_H__
 
