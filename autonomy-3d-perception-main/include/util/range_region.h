@@ -1,5 +1,3 @@
-
-
 fndef __RANGE_REGION_H__
 #define __RANGE_REGION_H__
 
