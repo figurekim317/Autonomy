@@ -1,6 +1,11 @@
 #ifndef __COMBINE_OBJECT_H__
 #define __COMBINE_OBJECT_H__
 
+
+
+
+
+
 #include <mutex>
 
 #include "autonomy_ros2_message/msg/depth_alive.hpp"
